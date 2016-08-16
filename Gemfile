@@ -16,8 +16,11 @@ gem 'jquery-rails'
 
 gem 'jbuilder',     '~> 1.2'
 
-
 group :development do
   gem "better_errors"
   gem 'binding_of_caller', '0.7.2'
+end
+
+group :test do
+  gem 'minitest-reporters'
 end
