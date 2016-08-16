@@ -1,7 +1,10 @@
 SampleApplication::Application.routes.draw do
+  root 'static_pages#home'
   get "static_pages/home"
   get "static_pages/help"
-  root 'application#hello'
+  get "static_pages/about"
+  get "static_pages/contact"
+  #root 'application#hello'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
