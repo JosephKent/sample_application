@@ -4,7 +4,7 @@ gem 'rails',        '4.0.0'
 
 gem 'byebug', '~> 9.0', '>= 9.0.5'
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby',  '3.0.0'
 
 gem 'bootstrap-sass', '3.2.0.2'
 
