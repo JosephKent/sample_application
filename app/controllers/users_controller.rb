@@ -8,7 +8,7 @@ before_action :admin_user,     only: :destroy
 
   def index
     begin
-      @users = User.paginate(page: params[:page])
+      @users = User.where(activated: true).paginate(page: params[:page])
     rescue Exception => e
       flash[:notice] = "Error displaying all users"
       redirect_to "/"
@@ -21,15 +21,16 @@ before_action :admin_user,     only: :destroy
 
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
     #debugger
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
       # Handle a successful save.
     else
       render 'new'

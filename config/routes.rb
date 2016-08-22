@@ -11,7 +11,8 @@ SampleApplication::Application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :users
-  resources :sessions
+  resources :account_activations, only: [:edit]
+
   #root 'application#hello'
 
   # Example of regular route:
