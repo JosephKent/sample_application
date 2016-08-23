@@ -8,6 +8,12 @@ gem 'bcrypt-ruby',  '3.0.0'
 
 gem 'faker',          '1.6.3'
 
+gem 'carrierwave',             '0.11.2'
+
+gem "rmagick"
+
+gem 'fog',                     '1.38.0'
+
 gem 'will_paginate',           '3.1.0'
 
 gem 'bootstrap-will_paginate', '0.0.10'
